@@ -66,11 +66,7 @@ endif()
 
 ## boost
 set(Boost_USE_MULTITHREADED ON)
-if (ENABLE_TESTS)
-    find_package(Boost COMPONENTS system unit_test_framework REQUIRED)
-else()
-    find_package(Boost COMPONENTS system REQUIRED)
-endif()
+find_package(Boost COMPONENTS REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIR_RELEASE})
 if(NOT Boost_USE_STATIC_LIBS)
